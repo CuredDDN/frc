@@ -5,17 +5,18 @@
 package frc.robot.commands;
 
 
+import frc.robot.OI;
 import frc.robot.subsystems.DriveTrainSubSystem;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+
 
 /** An example command that uses an example subsystem. */
 public class TankDriveCommand extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   
   private final DriveTrainSubSystem m_subsystem;
-
   /**
    * Creates a new ExampleCommand.
    *
@@ -34,7 +35,7 @@ public class TankDriveCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    
+    m_subsystem.motorspeed(-OI.driveController.getLeftY(), OI.driveController.getRightY());
   }
 
   // Called once the command ends or is interrupted.
