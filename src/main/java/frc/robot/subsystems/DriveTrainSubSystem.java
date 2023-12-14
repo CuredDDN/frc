@@ -23,11 +23,11 @@ public class DriveTrainSubSystem extends SubsystemBase {
   VictorSPX rightVictor = new VictorSPX(Constants.rightVictor);
 
   public void motorspeed(double leftSpeed, double rightSpeed) {
-leftTalon.set(ControlMode.PercentOutput, -leftSpeed);
-rightTalon.set(ControlMode.PercentOutput, rightSpeed);
+leftTalon.set(ControlMode.PercentOutput, leftSpeed);
+rightTalon.set(ControlMode.PercentOutput, -rightSpeed);
 
 leftVictor.follow(leftTalon);
-rightVictor.follow(rightVictor);
+rightVictor.follow(rightTalon);
 
   }
   /**

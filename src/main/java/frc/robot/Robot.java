@@ -19,7 +19,7 @@ import frc.robot.subsystems.DriveTrainSubSystem;
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
 private DriveTrainSubSystem subsystem = new DriveTrainSubSystem();
-private TankDriveCommand tankdrive = new TankDriveCommand(subsystem, 1);
+private TankDriveCommand tankdrive = new TankDriveCommand(subsystem, 0);
 
   private RobotContainer m_robotContainer;
 
